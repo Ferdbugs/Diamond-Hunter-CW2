@@ -131,6 +131,7 @@ public class TileMap {
 	
 	public int getTileSize() { return tileSize; }
 	public Tile[][] getTiles(){return tiles;}
+	public int[][] getmap(){return map;}
 	public int getx() { return x; }
 	public int gety() { return y; }
 	public int getWidth() { return width; }
