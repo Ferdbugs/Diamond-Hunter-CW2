@@ -86,18 +86,12 @@ public class MapViewController {
                 @Override
                 public void handle(MouseEvent event) {
 
-                        double x,y;
-                        PlayState X = new PlayState();
-                        PlayState Y = new PlayState();
+                        int x,y;
 
-                        x = event.getX();
-                        y = event.getY();
-                        x = Math.round(x);
-                        y = Math.round(y);
-                        X.setX((int) x);
-                        Y.setY((int) y);
+                        x = (int)event.getX()/16; //set x coordinates for axe
+                        y = (int)event.getY()/16; // set y cordinates for boat
 
-                        System.out.println("arguments passed for axe");
+                        System.out.println("THE COORDINATES SET FOR AXE ARE");
                         System.out.println("X-coordinates = "+x+" Y-Coordinates = " +y);
 
                 }//end handle override
@@ -111,17 +105,13 @@ public class MapViewController {
                     public void handle(MouseEvent event) {
                         double a,b;
 
-                        PlayState A = new PlayState();
-                        PlayState B = new PlayState();
 
-                        a = event.getX();
-                        b = event.getY();
-                        a = Math.round(a);
-                        b = Math.round(b);
-                        A.setX((int) a);
-                        B.setY((int) b);
+                        a = (int)event.getX()/16; //set x coordinates for boat
+                        b = (int)event.getY()/16; //set  y coordinates for boat
 
-                        System.out.println("arguments passed for boat");
+
+
+                        System.out.println("COORDINATES SET FOR BOAT ARE:");
                         System.out.println("X-coordinates = "+a+" Y-Coordinates = " +b);
 
                     }//end handle override

@@ -61,8 +61,6 @@ public class PlayState extends GameState {
 	public PlayState(GameStateManager gsm) {
 		super(gsm);
 	}
-
-	public PlayState(){}
 	
 	public void init() {
 		
@@ -183,29 +181,23 @@ public class PlayState extends GameState {
 		this.Y = Y;
 	}
 	private void populateItems() {
-		
+
+		//load file
+		// get coordinates from file
+
 		Item item;
 		
 		item = new Item(tileMap);
 		item.setType(Item.AXE);
 
-		if((X!=0) && (Y !=0)){
-			item.setTilePosition(X, Y);
-		}
-		else{
-			item.setTilePosition(18,19);
-		}
+		item.setTilePosition(18,19); // replace coordinates with the ones in the file
 
 		items.add(item);
 		
 		item = new Item(tileMap);
 		item.setType(Item.BOAT);
-		if((A!=0) && (B !=0)){
-			item.setTilePosition(A, B);
-		}
-		else{
-			item.setTilePosition(19,20);
-		}
+
+		item.setTilePosition(19,20); // replace coordinates with the ones in the file
 		items.add(item);
 		
 	}
