@@ -34,6 +34,8 @@ public class PlayState extends GameState {
 	
 	// items
 	private ArrayList<Item> items;
+	private int X=0,Y=0,A=0,B=0;
+
 	
 	// sparkles
 	private ArrayList<Sparkle> sparkles;
@@ -54,10 +56,13 @@ public class PlayState extends GameState {
 	
 	// transition box
 	private ArrayList<Rectangle> boxes;
-	
+
+
 	public PlayState(GameStateManager gsm) {
 		super(gsm);
 	}
+
+	public PlayState(){}
 	
 	public void init() {
 		
@@ -169,19 +174,38 @@ public class PlayState extends GameState {
 		diamonds.add(d);
 		
 	}
-	
+
+
+	public void setX(int X){
+		this.X = X;
+	}
+	public void setY(int Y){
+		this.Y = Y;
+	}
 	private void populateItems() {
 		
 		Item item;
 		
 		item = new Item(tileMap);
 		item.setType(Item.AXE);
-		item.setTilePosition(26, 37);
+
+		if((X!=0) && (Y !=0)){
+			item.setTilePosition(X, Y);
+		}
+		else{
+			item.setTilePosition(18,19);
+		}
+
 		items.add(item);
 		
 		item = new Item(tileMap);
 		item.setType(Item.BOAT);
-		item.setTilePosition(12, 4);
+		if((A!=0) && (B !=0)){
+			item.setTilePosition(A, B);
+		}
+		else{
+			item.setTilePosition(19,20);
+		}
 		items.add(item);
 		
 	}
