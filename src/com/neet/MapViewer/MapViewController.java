@@ -91,8 +91,16 @@ public class MapViewController {
                         x = (int)event.getX()/16; //set x coordinates for axe
                         y = (int)event.getY()/16; // set y cordinates for boat
 
+
                         System.out.println("THE COORDINATES SET FOR AXE ARE");
                         System.out.println("X-coordinates = "+x+" Y-Coordinates = " +y);
+
+                        AxeCreateFile axe = new AxeCreateFile();
+                        axe.openFile();
+                        axe.setX(x);
+                        axe.setY(y);
+                        axe.addRecords();
+                        axe.closeFile();
 
                 }//end handle override
             });//end setOnMouseCLicked
@@ -103,7 +111,7 @@ public class MapViewController {
                 Image_ViewMap.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        double a,b;
+                        int a,b;
 
 
                         a = (int)event.getX()/16; //set x coordinates for boat
@@ -113,6 +121,13 @@ public class MapViewController {
 
                         System.out.println("COORDINATES SET FOR BOAT ARE:");
                         System.out.println("X-coordinates = "+a+" Y-Coordinates = " +b);
+
+                        BoatCreateFile boat = new BoatCreateFile();
+                        boat.openFile();
+                        boat.setX(a);
+                        boat.setY(b);
+                        boat.addRecords();
+                        boat.closeFile();
 
                     }//end handle override
                 });

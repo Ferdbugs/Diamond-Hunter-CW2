@@ -9,6 +9,10 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
 import com.neet.DiamondHunter.Entity.Diamond;
 import com.neet.DiamondHunter.Entity.Item;
 import com.neet.DiamondHunter.Entity.Player;
@@ -184,6 +188,7 @@ public class PlayState extends GameState {
 
 		//load file
 		// get coordinates from file
+
 
 		Item item;
 		
