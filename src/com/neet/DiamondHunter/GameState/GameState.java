@@ -16,6 +16,7 @@ public abstract class GameState {
 	public GameState(GameStateManager gsm) {
 		this.gsm = gsm;
 	}
+	public GameState(){}
 	
 	public abstract void init();
 	public abstract void update();
