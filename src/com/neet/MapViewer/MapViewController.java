@@ -33,9 +33,14 @@ public class MapViewController {
 
     @FXML
     private Button ZoomIn,ZoomOut,SetAxe,SetBoat;
+    
+    private Boolean Zoom;
+    private String Area;
 
     public MapViewController(){
         mapModel = new MapModel();
+        Zoom = false;
+        Area= "";
     }
 
     public void initialize(){
@@ -43,7 +48,7 @@ public class MapViewController {
         mapModel.drawmap(Graphics);
         MapImage = MapCanvas.snapshot(new SnapshotParameters(),new WritableImage(640,640));
         Image_ViewMap.setImage(MapImage);
-        Rectangle2D viewportRect = new Rectangle2D(0, 0, 300, 300);
+        Rectangle2D viewportRect = new Rectangle2D(0, 0, 640, 640);
         Image_ViewMap.setViewport(viewportRect);
     }
 
@@ -53,29 +58,38 @@ public class MapViewController {
             if(event.getSource()==ZoomIn) {
                 Rectangle2D viewportRect = new Rectangle2D(0, 0, 320, 320);
                 Image_ViewMap.setViewport(viewportRect);
+                Zoom = true;
+                Area = "topleft";
             }
         }
         if(TopRight.isSelected()){
             if(event.getSource()==ZoomIn) {
                 Rectangle2D viewportRect = new Rectangle2D(320, 0, 320, 320);
                 Image_ViewMap.setViewport(viewportRect);
+                Zoom = true;
+                Area = "topright";
             }
         }
         if(BottomLeft.isSelected()){
             if(event.getSource()==ZoomIn) {
                 Rectangle2D viewportRect = new Rectangle2D(0, 320, 320, 320);
                 Image_ViewMap.setViewport(viewportRect);
+                Zoom = true;
+                Area = "bottomleft";
             }
         }
         if(BottomRight.isSelected()){
             if(event.getSource()==ZoomIn) {
                 Rectangle2D viewportRect = new Rectangle2D(320, 320, 320, 320);
                 Image_ViewMap.setViewport(viewportRect);
+                Zoom = true;
+                Area = "bottomright";
             }
         }
         if(event.getSource()==ZoomOut){
             Rectangle2D viewportRect = new Rectangle2D(0, 0, 640, 640);
             Image_ViewMap.setViewport(viewportRect);
+            Zoom = false;
         }
     }
 
@@ -89,8 +103,31 @@ public class MapViewController {
                         int x,y;
 
                         x = (int)event.getX()/16; //set x coordinates for axe
-                        y = (int)event.getY()/16; // set y cordinates for boat
-
+                        y = (int)event.getY()/16; // set y coordinates for boat
+                        
+                        if(Zoom==true)
+                        {
+                            if (Area=="topleft") {
+                                x = x / 2;
+                                y = y / 2;
+                            }
+                            if (Area=="topright") {
+                                x = x / 2;
+                                x += 20;
+                                y = y / 2;
+                            }
+                            if (Area=="bottomleft") {
+                                x = x / 2;
+                                y = y / 2;
+                                y +=20;
+                            }
+                            if (Area=="bottomright") {
+                                x = x / 2;
+                                x +=20;
+                                y = y / 2;
+                                y += 20;
+                            }
+                        }
 
                         System.out.println("THE COORDINATES SET FOR AXE ARE");
                         System.out.println("X-coordinates = "+x+" Y-Coordinates = " +y);
@@ -117,6 +154,29 @@ public class MapViewController {
                         a = (int)event.getX()/16; //set x coordinates for boat
                         b = (int)event.getY()/16; //set  y coordinates for boat
 
+                        if(Zoom==true)
+                        {
+                            if (Area=="topleft") {
+                                a = a / 2;
+                                b = b / 2;
+                            }
+                            if (Area=="topright") {
+                                a = a / 2;
+                                a += 20;
+                                b = b / 2;
+                            }
+                            if (Area=="bottomleft") {
+                                a = a / 2;
+                                b = b / 2;
+                                b +=20;
+                            }
+                            if (Area=="bottomright") {
+                                a = a / 2;
+                                a +=20;
+                                b = b / 2;
+                                b += 20;
+                            }
+                        }
 
 
                         System.out.println("COORDINATES SET FOR BOAT ARE:");
