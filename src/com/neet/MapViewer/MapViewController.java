@@ -11,6 +11,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -34,7 +35,10 @@ public class MapViewController {
 
     @FXML
     private Button ZoomIn,ZoomOut,SetAxe,SetBoat;
-    
+
+    @FXML
+    private TextField PlacementAxe,PlacementBoat;
+
     private Boolean Zoom;
     private String Area;
 
@@ -141,9 +145,10 @@ public class MapViewController {
                             axe.setY(y);
                             axe.addRecords();
                             axe.closeFile();
+                            PlacementAxe.setText("  Axe is Placed! " +"("+x +","+ y+")");
                         }
                         else{
-                            System.out.println("INVALID");
+                            PlacementAxe.setText(" Invalid Axe Placement");
                         }
 
                 }//end handle override
@@ -195,9 +200,10 @@ public class MapViewController {
                             boat.setY(b);
                             boat.addRecords();
                             boat.closeFile();
+                            PlacementBoat.setText("  Boat is Placed! " +"("+a +","+ b+")");
                         }
                         else{
-                            System.out.println("INVALID");
+                            PlacementBoat.setText(" Invalid Boat Placement");
                         }
                     }//end handle override
                 });

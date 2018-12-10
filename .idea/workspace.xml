@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da367fce-7a99-4b84-b021-fff70dd3236d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AxeCoordinates.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AxeCoordinates.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BoatCoordinates.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BoatCoordinates.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/AxeCreateFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/AxeCreateFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/BoatCreateFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/BoatCreateFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/MapModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/MapModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/MapView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/MapView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/neet/MapViewer/MapViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/neet/MapViewer/MapViewController.java" afterDir="false" />
     </list>
@@ -46,12 +41,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="597" />
+          <entry key="java" value="769" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="597" />
+          <entry key="JAVA" value="769" />
         </counts>
       </usages-collector>
     </session>
@@ -73,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/MapModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="221">
+              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1085#1086#0" expanded="true" />
@@ -84,21 +79,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/MapView.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="92" />
+            <state relative-caret-position="312">
+              <caret line="38" selection-start-line="37" selection-start-column="105" selection-end-line="37" selection-end-column="109" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/MapViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-868">
-              <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+            <state relative-caret-position="273">
+              <caret line="147" column="67" selection-start-line="147" selection-start-column="67" selection-end-line="147" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -191,9 +186,9 @@
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/AxeCreateFile.java" />
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/BoatCreateFile.java" />
         <option value="$PROJECT_DIR$/src/com/neet/DiamondHunter/GameState/PlayState.java" />
-        <option value="$PROJECT_DIR$/src/com/neet/MapViewer/MapViewController.java" />
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/MapModel.java" />
         <option value="$PROJECT_DIR$/src/com/neet/MapViewer/MapView.fxml" />
+        <option value="$PROJECT_DIR$/src/com/neet/MapViewer/MapViewController.java" />
       </list>
     </option>
   </component>
@@ -278,7 +273,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544439819496" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544441373242" />
     <property name="last_opened_file_path" value="A:/Java Programs/stackLinkedList" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -352,7 +347,7 @@
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1750503" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1750503" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -361,7 +356,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41501418" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2082153" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -534,17 +529,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/MapViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-868">
-          <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/MapModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="221">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1085#1086#0" expanded="true" />
@@ -555,11 +543,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/MapView.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="92" />
+        <state relative-caret-position="312">
+          <caret line="38" selection-start-line="37" selection-start-column="105" selection-end-line="37" selection-end-column="109" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/neet/MapViewer/MapViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="147" column="67" selection-start-line="147" selection-start-column="67" selection-end-line="147" selection-end-column="67" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
