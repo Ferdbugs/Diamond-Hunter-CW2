@@ -1,6 +1,7 @@
 package com.neet.MapViewer;
 
 import com.neet.DiamondHunter.GameState.PlayState;
+import com.neet.DiamondHunter.TileMap.TileMap;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -129,15 +130,21 @@ public class MapViewController {
                             }
                         }
 
-                        System.out.println("THE COORDINATES SET FOR AXE ARE");
-                        System.out.println("X-coordinates = "+x+" Y-Coordinates = " +y);
+                        if (mapModel.getTileMap().getType(y,x)==0){
 
-                        AxeCreateFile axe = new AxeCreateFile();
-                        axe.openFile();
-                        axe.setX(x);
-                        axe.setY(y);
-                        axe.addRecords();
-                        axe.closeFile();
+                            System.out.println("THE COORDINATES SET FOR AXE ARE");
+                            System.out.println("X-coordinates = "+x+" Y-Coordinates = " +y);
+
+                            AxeCreateFile axe = new AxeCreateFile();
+                            axe.openFile();
+                            axe.setX(x);
+                            axe.setY(y);
+                            axe.addRecords();
+                            axe.closeFile();
+                        }
+                        else{
+                            System.out.println("INVALID");
+                        }
 
                 }//end handle override
             });//end setOnMouseCLicked
@@ -178,17 +185,20 @@ public class MapViewController {
                             }
                         }
 
+                        if (mapModel.getTileMap().getType(b,a)==0){
+                            System.out.println("COORDINATES SET FOR BOAT ARE:");
+                            System.out.println("X-coordinates = "+a+" Y-Coordinates = " +b);
 
-                        System.out.println("COORDINATES SET FOR BOAT ARE:");
-                        System.out.println("X-coordinates = "+a+" Y-Coordinates = " +b);
-
-                        BoatCreateFile boat = new BoatCreateFile();
-                        boat.openFile();
-                        boat.setX(a);
-                        boat.setY(b);
-                        boat.addRecords();
-                        boat.closeFile();
-
+                            BoatCreateFile boat = new BoatCreateFile();
+                            boat.openFile();
+                            boat.setX(a);
+                            boat.setY(b);
+                            boat.addRecords();
+                            boat.closeFile();
+                        }
+                        else{
+                            System.out.println("INVALID");
+                        }
                     }//end handle override
                 });
         }//end if statement

@@ -197,12 +197,7 @@ public class PlayState extends GameState {
 
 		//checks if coordinates in AxeReadFile are null or not
 		if((file.getX() != 0) && (file.getY() != 0)){
-			item.setTilePosition(file.getX(), file.getY());
-			//instantiate new object of AxeCreateFile to reset set coordinates
-			AxeCreateFile delete = new AxeCreateFile();
-			delete.openFile();
-			delete.resetRecords();
-			delete.closeFile();
+			item.setTilePosition(file.getY(), file.getX());
 		}
 
 		else{
@@ -222,12 +217,7 @@ public class PlayState extends GameState {
 
 		//checks if coordinates in BoatReadFile are null or not
 		if((file1.getX() != 0) && (file1.getY() != 0)){
-			item.setTilePosition(file1.getX(), file1.getY());
-			//instantiate new object of AxeCreateFile to reset set coordinates
-			BoatCreateFile delete = new BoatCreateFile();
-			delete.openFile();
-			delete.resetRecords();
-			delete.closeFile();
+			item.setTilePosition(file1.getY(), file1.getX());
 		}
 		else{
 			item.setTilePosition(12,4);

@@ -21,14 +21,14 @@
    <right>
       <Pane fx:id="LeftPane" prefHeight="640.0" prefWidth="219.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="SetAxe" layoutX="46.0" layoutY="471.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Set Axe" onAction="#setPosition"/>
-            <Button fx:id="SetBoat" layoutX="46.0" layoutY="558.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Set Boat" onAction="#setPosition" />
+            <Button fx:id="SetAxe" layoutX="46.0" layoutY="471.0" mnemonicParsing="false" onAction="#setPosition" prefHeight="52.0" prefWidth="109.0" text="Set Axe" />
+            <Button fx:id="SetBoat" layoutX="46.0" layoutY="558.0" mnemonicParsing="false" onAction="#setPosition" prefHeight="52.0" prefWidth="109.0" text="Set Boat" />
             <RadioButton fx:id="TopLeft" layoutX="14.0" layoutY="210.0" mnemonicParsing="false" onAction="#radioSelect" text="Top Left">
                <toggleGroup>
                   <ToggleGroup fx:id="ZoomRadio" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="TopRight" layoutX="113.0" layoutY="210.0" mnemonicParsing="false" onAction="#radioSelect" text="Top Right" toggleGroup="$ZoomRadio"  />
+            <RadioButton fx:id="TopRight" layoutX="113.0" layoutY="210.0" mnemonicParsing="false" onAction="#radioSelect" text="Top Right" toggleGroup="$ZoomRadio" />
             <RadioButton fx:id="BottomLeft" layoutX="14.0" layoutY="256.0" mnemonicParsing="false" onAction="#radioSelect" text="Bottom Left" toggleGroup="$ZoomRadio" />
             <RadioButton fx:id="BottomRight" layoutX="113.0" layoutY="256.0" mnemonicParsing="false" onAction="#radioSelect" text="Bottom Right" toggleGroup="$ZoomRadio" />
             <Button fx:id="ZoomIn" layoutX="30.0" layoutY="131.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="52.0" prefWidth="80.0" text="Zoom-In" />

@@ -12,13 +12,12 @@ public class MapModel {
     private Image[][] tiles;
     private int[][] map;
     private int tilesize;
-
+    private TileMap tileMap = new TileMap(16);
     public MapModel(){
         loadmaptiles();
     }
     //map loader function
     private void loadmaptiles(){
-            TileMap tileMap = new TileMap(16);
             tileMap.loadTiles("/Tilesets/testtileset.gif");
             tileMap.loadMap("/Maps/testmap.map");
             Tile[][] tilearray= tileMap.getTiles();
@@ -32,6 +31,9 @@ public class MapModel {
 
             }
 
+    }
+    public TileMap getTileMap(){
+        return tileMap;
     }
     public void drawmap(GraphicsContext g){
         for(int i=0;i<map.length;i++){

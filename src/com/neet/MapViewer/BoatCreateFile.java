@@ -24,11 +24,6 @@ public class BoatCreateFile {
         file.format("%d \n %d ",x, y);
     }
 
-    public void resetRecords(){
-        x=0;
-        y=0;
-        file.format("%d \n %d ",x, y);
-    }
 
     public void closeFile() {
         file.close();
