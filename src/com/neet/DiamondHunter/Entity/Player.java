@@ -133,12 +133,7 @@ public class Player extends Entity {
 		
 		// check if on water
 		boolean current = onWater;
-		if(tileMap.getIndex(ydest / tileSize, xdest / tileSize) == 4) {
-			onWater = true;
-		}
-		else {
-			onWater = false;
-		}
+        onWater = tileMap.getIndex(ydest / tileSize, xdest / tileSize) == 4;
 		// if going from land to water
 		if(!current && onWater) {
 			JukeBox.play("splash");

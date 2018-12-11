@@ -1,5 +1,6 @@
 package com.neet.MapViewer;
 
+import com.neet.DiamondHunter.Manager.Content;
 import com.neet.DiamondHunter.TileMap.Tile;
 import com.neet.DiamondHunter.TileMap.TileMap;
 import javafx.embed.swing.SwingFXUtils;
@@ -13,8 +14,13 @@ public class MapModel {
     private int[][] map;
     private int tilesize;
     private TileMap tileMap = new TileMap(16);
+    private Image AxeImage;
+    private Image BoatImage;
+
     public MapModel(){
         loadmaptiles();
+        AxeImage = SwingFXUtils.toFXImage(Content.ITEMS[1][1],null);
+        BoatImage = SwingFXUtils.toFXImage(Content.ITEMS[1][0],null);
     }
     //map loader function
     private void loadmaptiles(){
@@ -44,6 +50,13 @@ public class MapModel {
                 g.drawImage(tiles[row][col],j*tilesize,i*tilesize);
             }
         }
+    }
+
+    public Image getAxe(){
+        return AxeImage;
+    }
+    public Image getBoat(){
+        return BoatImage;
     }
 
 

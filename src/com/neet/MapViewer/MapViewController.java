@@ -39,6 +39,8 @@ public class MapViewController {
     @FXML
     private TextField PlacementAxe,PlacementBoat;
 
+    private int x,y,a,b;
+
     private Boolean Zoom;
     private String Area;
 
@@ -47,12 +49,23 @@ public class MapViewController {
         Zoom = false;
         Area= "";
     }
+    public void drawItem(){
+        Image Axe = mapModel.getAxe();
+        Image Boat = mapModel.getBoat();
+        Graphics.drawImage(Axe,x*16,y*16);
+        Graphics.drawImage(Boat,a*16,b*16);
+    }
+    public void UpdateMap(){
+        mapModel.drawmap(Graphics);
+        drawItem();
+        MapImage = MapCanvas.snapshot(new SnapshotParameters(),new WritableImage(640,640));
+        Image_ViewMap.setImage(MapImage);
+    }
 
     public void initialize(){
         Graphics = MapCanvas.getGraphicsContext2D();
         mapModel.drawmap(Graphics);
-        MapImage = MapCanvas.snapshot(new SnapshotParameters(),new WritableImage(640,640));
-        Image_ViewMap.setImage(MapImage);
+        UpdateMap();
         Rectangle2D viewportRect = new Rectangle2D(0, 0, 640, 640);
         Image_ViewMap.setViewport(viewportRect);
     }
@@ -105,8 +118,6 @@ public class MapViewController {
                 @Override
                 public void handle(MouseEvent event) {
 
-                        int x,y;
-
                         x = (int)event.getX()/16; //set x coordinates for axe
                         y = (int)event.getY()/16; // set y coordinates for boat
                         
@@ -146,6 +157,7 @@ public class MapViewController {
                             axe.addRecords();
                             axe.closeFile();
                             PlacementAxe.setText("  Axe is Placed! " +"("+x +","+ y+")");
+                            UpdateMap();
                         }
                         else{
                             PlacementAxe.setText(" Invalid Axe Placement");
@@ -160,8 +172,6 @@ public class MapViewController {
                 Image_ViewMap.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        int a,b;
-
 
                         a = (int)event.getX()/16; //set x coordinates for boat
                         b = (int)event.getY()/16; //set  y coordinates for boat
@@ -201,6 +211,7 @@ public class MapViewController {
                             boat.addRecords();
                             boat.closeFile();
                             PlacementBoat.setText("  Boat is Placed! " +"("+a +","+ b+")");
+                            UpdateMap();
                         }
                         else{
                             PlacementBoat.setText(" Invalid Boat Placement");

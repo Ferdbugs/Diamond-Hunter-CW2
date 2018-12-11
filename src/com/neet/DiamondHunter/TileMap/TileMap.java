@@ -206,9 +206,8 @@ public class TileMap {
 		
 		colOffset = -this.x / tileSize;
 		rowOffset = -this.y / tileSize;
-		
-		if(x != xdest || y != ydest) moving = true;
-		else moving = false;
+
+        moving = x != xdest || y != ydest;
 		
 	}
 	
