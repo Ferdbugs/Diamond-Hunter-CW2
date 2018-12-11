@@ -48,6 +48,10 @@ public class MapViewController {
         mapModel = new MapModel();
         Zoom = false;
         Area= "";
+        y=26;
+        x=37;
+        b=12;
+        a=4;
     }
     public void drawItem(){
         Image Axe = mapModel.getAxe();
