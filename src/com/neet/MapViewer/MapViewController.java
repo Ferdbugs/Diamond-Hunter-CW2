@@ -1,6 +1,7 @@
 package com.neet.MapViewer;
 
 
+import com.neet.DiamondHunter.Main.Game;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -250,6 +251,15 @@ public class MapViewController {
                     }//end handle override
                 });
         }//end if statement
+    }
+
+    /**
+     * The function is used to initiate the Diamond Hunter game from the Map Viewer Itself
+     * @param event
+     */
+    @FXML public void StartGame(ActionEvent event){
+        Main.PrimaryStage.hide();
+        Game.main(null);
     }
 
 

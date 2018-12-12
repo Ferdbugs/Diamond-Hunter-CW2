@@ -11,6 +11,8 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
+    public static Stage PrimaryStage;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -18,9 +20,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("MapView.fxml"));      //The fxml file to be used as scene is specified.
-        primaryStage.setTitle("Diamond Hunter MapViewer");                                //Setting title name.
-        primaryStage.setScene(new Scene(root));                                           //Setting scene from the MapView.fxml
-        primaryStage.show();
+        PrimaryStage=primaryStage;
+        PrimaryStage.setTitle("Diamond Hunter MapViewer");                                //Setting title name.
+        PrimaryStage.setScene(new Scene(root));                                           //Setting scene from the MapView.fxml
+        PrimaryStage.show();
     }
 
 }
