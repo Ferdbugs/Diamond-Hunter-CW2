@@ -3,12 +3,18 @@ package com.neet.MapViewer;
 import java.io.File;
 import java.util.Scanner;
 
+
+/**
+ * This class reads the Axe coordinates from the AxeCoordinates.txt file
+ */
 public class AxeReadFile {
     private Scanner read;
     private int X,Y;
 
 
-
+    /**
+     * This method opens the AxeCoordinates.txt file
+     */
     public void openAxeFile(){
         try{
             read = new Scanner(new File("AxeCoordinates.txt"));
@@ -18,6 +24,10 @@ public class AxeReadFile {
         }
     }
 
+    /**
+     * This method reads the AxeCoordinates.txt file
+     * and sets the coordinates through the X and Y setter methods
+     */
     public void readAxeFile(){
         while(read.hasNext()){
             int x = read.nextInt();
@@ -27,21 +37,41 @@ public class AxeReadFile {
         }
     }
 
+    /**
+     * This method closes the AxeCoordinates.txt file
+     */
     public void closeFile(){
         read.close();
     }
 
+    /**
+     * This method sets the X value
+     * @param X This represents the x-coordinates of the Axe
+     */
     public void setX(int X){
         this.X = X;
     }
 
+    /**
+     * This method returns the X value
+     * @return Returns the X-coordinate value
+     */
     public int getX(){
         return X;
     }
+
+    /**
+     * This method sets the Y value
+     * @param Y This represents the y-coordinates of the Axe
+     */
     public void setY(int Y){
         this.Y= Y;
     }
 
+    /**
+     * This method returns the Y value
+     * @return Returns the Y-coordinate value
+     */
     public int getY(){
         return Y;
     }
