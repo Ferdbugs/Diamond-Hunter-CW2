@@ -179,8 +179,8 @@ public class MapViewController {
 
                         if (mapModel.getTileMap().getType(y,x)==0){
 
-                            System.out.println("THE COORDINATES SET FOR AXE ARE");
-                            System.out.println("X-coordinates = "+x+" Y-Coordinates = " +y);
+                           // System.out.println("THE COORDINATES SET FOR AXE ARE");
+                           // System.out.println("X-coordinates = "+x+" Y-Coordinates = " +y);
 
                             AxeCreateFile axe = new AxeCreateFile();
                             axe.openFile();
@@ -233,8 +233,8 @@ public class MapViewController {
                         }
 
                         if (mapModel.getTileMap().getType(b,a)==0){
-                            System.out.println("COORDINATES SET FOR BOAT ARE:");
-                            System.out.println("X-coordinates = "+a+" Y-Coordinates = " +b);
+                           // System.out.println("COORDINATES SET FOR BOAT ARE:");
+                           // System.out.println("X-coordinates = "+a+" Y-Coordinates = " +b);
 
                             BoatCreateFile boat = new BoatCreateFile();
                             boat.openFile();

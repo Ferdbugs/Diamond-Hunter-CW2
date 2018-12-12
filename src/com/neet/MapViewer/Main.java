@@ -21,6 +21,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("MapView.fxml"));      //The fxml file to be used as scene is specified.
         PrimaryStage=primaryStage;
+        PrimaryStage.setResizable(false);
         PrimaryStage.setTitle("Diamond Hunter MapViewer");                                //Setting title name.
         PrimaryStage.setScene(new Scene(root));                                           //Setting scene from the MapView.fxml
         PrimaryStage.show();
