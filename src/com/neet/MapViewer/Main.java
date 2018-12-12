@@ -6,6 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * This is the Main class for the Map Viewer JavaFx application.
+ */
 public class Main extends Application {
 
     public static void main(String[] args) {
@@ -14,9 +17,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("MapView.fxml"));
-        primaryStage.setTitle("Diamond Hunter MapViewer");
-        primaryStage.setScene(new Scene(root));
+        Parent root = FXMLLoader.load(getClass().getResource("MapView.fxml"));      //The fxml file to be used as scene is specified.
+        primaryStage.setTitle("Diamond Hunter MapViewer");                                //Setting title name.
+        primaryStage.setScene(new Scene(root));                                           //Setting scene from the MapView.fxml
         primaryStage.show();
     }
 

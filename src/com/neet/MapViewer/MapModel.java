@@ -7,6 +7,11 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
+/**
+ * This is the Model class. It interacts with Diamond Hunter code to fetch necessary resources for the Map Viewer to function.
+ * Additionally this class contains the functions to draw the Map for the Map Viewer, which is called in the controller class. This
+ * class will work as the intermediate between the controller class and the classes in Diamond Hunter.
+ */
 
 public class MapModel {
 
@@ -17,20 +22,26 @@ public class MapModel {
     private Image AxeImage;
     private Image BoatImage;
 
+    /**
+     * Constructor used to initialize some functions and variables.
+     */
     public MapModel(){
-        loadmaptiles();
-        AxeImage = SwingFXUtils.toFXImage(Content.ITEMS[1][1],null);
-        BoatImage = SwingFXUtils.toFXImage(Content.ITEMS[1][0],null);
+        loadmaptiles();                                                     //Calls loadmaptiles() to initialize the function, making it ready for use.
+        AxeImage = SwingFXUtils.toFXImage(Content.ITEMS[1][1],null);  //Image of the axe is loaded from Content class in Diamond Hunter.
+        BoatImage = SwingFXUtils.toFXImage(Content.ITEMS[1][0],null); //Image of the boat is loaded from Content class in Diamond Hunter.
     }
-    //map loader function
+
+    /**
+     * This function loads the map onto a multi-dimensional tile array.
+     */
     private void loadmaptiles(){
-            tileMap.loadTiles("/Tilesets/testtileset.gif");
-            tileMap.loadMap("/Maps/testmap.map");
-            Tile[][] tilearray= tileMap.getTiles();
+            tileMap.loadTiles("/Tilesets/testtileset.gif");             //Calls loadTiles function in TileMap and loads in map tiles as argument.
+            tileMap.loadMap("/Maps/testmap.map");                       //Calls loadMap function in TileMap and loads in testmap as argument.
+            Tile[][] tilearray= tileMap.getTiles();                        //Passes the buffered images of the tiles into a multi-dimensional array.
             tilesize = tileMap.getTileSize();
             map = tileMap.getmap();
             tiles = new Image[tilearray.length][tilearray[0].length];
-            for(int i=0;i<tilearray.length;i++){
+            for(int i=0;i<tilearray.length;i++){                            //Cycles through each buffered image in the array and converts it to JavaFX image.
                 for(int j=0;j<tilearray[i].length;j++){
                     tiles[i][j] = SwingFXUtils.toFXImage(tilearray[i][j].getImage(), null);
                 }
@@ -38,23 +49,42 @@ public class MapModel {
             }
 
     }
+
+    /**
+     * Getter function to TileMap.
+     * @return tilemap
+     */
     public TileMap getTileMap(){
         return tileMap;
     }
+
+    /**
+     * Function used to draw image from multi-dimensional array of images.
+     * @param g
+     */
     public void drawmap(GraphicsContext g){
-        for(int i=0;i<map.length;i++){
+        for(int i=0;i<map.length;i++){                                      //Cycle through the map array.
             for(int j=0;j<map[i].length;j++){
                 int tile = map[i][j];
-                int row=tile/20;
-                int col=tile%20;
-                g.drawImage(tiles[row][col],j*tilesize,i*tilesize);
+                int row=tile/20;                                            //Divide the respective tile by 20 to get row number.
+                int col=tile%20;                                            //Modulus the respective tile by 20 to get column number.
+                g.drawImage(tiles[row][col],j*tilesize,i*tilesize);   //Draws specific images from the tiles array according to the test map rows and columns.
             }
         }
     }
 
+    /**
+     * Getter function for Axe Image
+     * @return AxeImage
+     */
     public Image getAxe(){
         return AxeImage;
     }
+
+    /**
+     * Getter function for Boat Image
+     * @return  BoatImage
+     */
     public Image getBoat(){
         return BoatImage;
     }
