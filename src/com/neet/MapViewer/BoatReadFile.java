@@ -16,10 +16,10 @@ public class BoatReadFile {
      */
     public void openBoatFile(){
         try{
-            read = new Scanner(new File("BoatCoordinates.txt"));
+            read = new Scanner(new File("BoatCoordinates.txt"));        //open BoatCoordinates.txt file
         }
         catch(Exception e){
-            System.out.println("Could not find file BoatCoordinates.txt");
+            System.out.println("Could not find file BoatCoordinates.txt");        //prints if file not found
         }
     }
 
@@ -27,12 +27,12 @@ public class BoatReadFile {
      * This method reads the BoatCoordinates.txt file
      * and sets the coordinates through the X and Y setter methods
      */
-    public void readBoatFile(){
-        while(read.hasNext()){
-            int x = read.nextInt();
-            int y = read.nextInt();
-            setX(x);
-            setY(y);
+    public void readBoatFile(){                                         //reads boat file
+        while(read.hasNext()){                  //true if there are integer values
+            int x = read.nextInt();             //set x as first read integer
+            int y = read.nextInt();             //set y as next read integer
+            setX(x);                //set x value globally
+            setY(y);                //set y value globally
         }
     }
 
@@ -41,7 +41,7 @@ public class BoatReadFile {
      */
     public void closeFile(){
         read.close();
-    }
+    }       //closes file
 
     /**
      * This method sets the X value
@@ -49,7 +49,7 @@ public class BoatReadFile {
      */
     public void setX(int X){
         this.X = X;
-    }
+    }       //set x value
 
     /**
      * This method returns the X value
@@ -57,7 +57,7 @@ public class BoatReadFile {
      */
     public int getX(){
         return X;
-    }
+    }               //returns x value
 
     /**
      * This method sets the Y value
@@ -65,7 +65,7 @@ public class BoatReadFile {
      */
     public void setY(int Y){
         this.Y= Y;
-    }
+    }         //set y value
 
     /**
      * This method returns the Y value
@@ -73,6 +73,6 @@ public class BoatReadFile {
      */
     public int getY(){
         return Y;
-    }
+    }                   //returns y value
 
 }

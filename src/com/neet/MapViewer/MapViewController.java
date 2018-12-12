@@ -117,31 +117,31 @@ public class MapViewController {
 
     public void setPosition(ActionEvent event){
 
-            if(event.getSource()==SetAxe){
-            Image_ViewMap.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            if(event.getSource()==SetAxe){                                                      //true when SetAxe Button is clicked
+            Image_ViewMap.setOnMouseClicked(new EventHandler<MouseEvent>() {                    //Handles Mouse Click based on the Map
                 @Override
                 public void handle(MouseEvent event) {
 
-                        x = (int)event.getX()/16; //set x coordinates for axe
-                        y = (int)event.getY()/16; // set y coordinates for boat
+                        x = (int)event.getX()/16;                                                //set x coordinates for axe
+                        y = (int)event.getY()/16;                                                // set y coordinates for boat
                         
-                        if(Zoom==true)
+                        if(Zoom==true)                                                           //adjusts the coordinate values when Axe is set in Zoom View
                         {
-                            if (Area=="topleft") {
+                            if (Area=="topleft") {                                               //adjusts the coordinate values when Axe is set in Top Left
                                 x = x / 2;
                                 y = y / 2;
                             }
-                            if (Area=="topright") {
+                            if (Area=="topright") {                                              //adjusts the coordinate values when Axe is set in Top Right
                                 x = x / 2;
                                 x += 20;
                                 y = y / 2;
                             }
-                            if (Area=="bottomleft") {
+                            if (Area=="bottomleft") {                                            //adjusts the coordinate values when Axe is set in Bottom Left
                                 x = x / 2;
                                 y = y / 2;
                                 y +=20;
                             }
-                            if (Area=="bottomright") {
+                            if (Area=="bottomright") {                                           //adjusts the coordinate values when Axe is set in Bottom Right
                                 x = x / 2;
                                 x +=20;
                                 y = y / 2;
@@ -149,21 +149,21 @@ public class MapViewController {
                             }
                         }
 
-                        if (mapModel.getTileMap().getType(y,x)==0){
+                        if (mapModel.getTileMap().getType(y,x)==0){                              //true if item is set at location other than trees and river
 
                             System.out.println("THE COORDINATES SET FOR AXE ARE");
                             System.out.println("X-coordinates = "+x+" Y-Coordinates = " +y);
 
-                            AxeCreateFile axe = new AxeCreateFile();
-                            axe.openFile();
-                            axe.setX(x);
-                            axe.setY(y);
-                            axe.addRecords();
-                            axe.closeFile();
+                            AxeCreateFile axe = new AxeCreateFile();                            //Creates new AxeCreateFile object axe
+                            axe.openFile();                                                     //creates new text file
+                            axe.setX(x);                                                        //passes the x coordinate value to the axe object
+                            axe.setY(y);                                                        //passes the y coordinate value to the axe object
+                            axe.addRecords();                                                   //Writes the passed coordinate values into the file
+                            axe.closeFile();                                                    //Closes the file
                             PlacementAxe.setText("  Axe is Placed! " +"("+x +","+ y+")");
                             UpdateMap();
                         }
-                        else{
+                        else{                                                                   //Displays Invalid Axe Placement if coordinates set are on trees and water
                             PlacementAxe.setText(" Invalid Axe Placement");
                         }
 
@@ -172,31 +172,31 @@ public class MapViewController {
         }//end if statement
 
 
-            if(event.getSource()==SetBoat){
-                Image_ViewMap.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            if(event.getSource()==SetBoat){                                         //true when SetBoat Button is clicked
+                Image_ViewMap.setOnMouseClicked(new EventHandler<MouseEvent>() {    //Handles Mouse Click based on the Map
                     @Override
                     public void handle(MouseEvent event) {
 
-                        a = (int)event.getX()/16; //set x coordinates for boat
-                        b = (int)event.getY()/16; //set  y coordinates for boat
+                        a = (int)event.getX()/16; //set x coordinates for boat      //set x coordinates for boat
+                        b = (int)event.getY()/16; //set  y coordinates for boat     // set y coordinates for boat
 
-                        if(Zoom==true)
+                        if(Zoom==true)                              //adjusts the coordinate values when Boat is set in Zoom View
                         {
-                            if (Area=="topleft") {
+                            if (Area=="topleft") {                  //adjusts the coordinate values when Boat is set in Top Left
                                 a = a / 2;
                                 b = b / 2;
                             }
-                            if (Area=="topright") {
+                            if (Area=="topright") {                 //adjusts the coordinate values when Boat is set in Top Right
                                 a = a / 2;
                                 a += 20;
                                 b = b / 2;
                             }
-                            if (Area=="bottomleft") {
+                            if (Area=="bottomleft") {               //adjusts the coordinate values when Boat is set in Bottom Left
                                 a = a / 2;
                                 b = b / 2;
                                 b +=20;
                             }
-                            if (Area=="bottomright") {
+                            if (Area=="bottomright") {              //adjusts the coordinate values when Boat is set in Bottom Right
                                 a = a / 2;
                                 a +=20;
                                 b = b / 2;
@@ -204,20 +204,20 @@ public class MapViewController {
                             }
                         }
 
-                        if (mapModel.getTileMap().getType(b,a)==0){
+                        if (mapModel.getTileMap().getType(b,a)==0){                 //true if item is set at location other than trees and river
                             System.out.println("COORDINATES SET FOR BOAT ARE:");
                             System.out.println("X-coordinates = "+a+" Y-Coordinates = " +b);
 
-                            BoatCreateFile boat = new BoatCreateFile();
-                            boat.openFile();
-                            boat.setX(a);
-                            boat.setY(b);
-                            boat.addRecords();
-                            boat.closeFile();
+                            BoatCreateFile boat = new BoatCreateFile();             //Creates new BoatCreateFile object boat
+                            boat.openFile();                                        //creates new text file
+                            boat.setX(a);                                           //passes the x coordinate value to the boat object
+                            boat.setY(b);                                           //passes the y coordinate value to the boat object
+                            boat.addRecords();                                      //Writes the passed coordinate values into the file
+                            boat.closeFile();                                       //Closes the file
                             PlacementBoat.setText("  Boat is Placed! " +"("+a +","+ b+")");
                             UpdateMap();
                         }
-                        else{
+                        else{                                                       //Displays Invalid Axe Placement if coordinates set are on trees and water
                             PlacementBoat.setText(" Invalid Boat Placement");
                         }
                     }//end handle override

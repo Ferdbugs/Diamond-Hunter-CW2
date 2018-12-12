@@ -17,10 +17,10 @@ public class AxeReadFile {
      */
     public void openAxeFile(){
         try{
-            read = new Scanner(new File("AxeCoordinates.txt"));
+            read = new Scanner(new File("AxeCoordinates.txt"));     //open BoatCoordinates.txt file
         }
         catch(Exception e){
-            System.out.println("Could not find file AxeCoordinates.txt");
+            System.out.println("Could not find file AxeCoordinates.txt");      //prints if file not found
         }
     }
 
@@ -29,11 +29,11 @@ public class AxeReadFile {
      * and sets the coordinates through the X and Y setter methods
      */
     public void readAxeFile(){
-        while(read.hasNext()){
-            int x = read.nextInt();
-            int y = read.nextInt();
-            setX(x);
-            setY(y);
+        while(read.hasNext()){          //true while there is readable data in file
+            int x = read.nextInt();        //sets x as first read integer
+            int y = read.nextInt();         //sets y as next read integer
+            setX(x);            //sets x globally
+            setY(y);            //sets y globally
         }
     }
 
@@ -42,7 +42,7 @@ public class AxeReadFile {
      */
     public void closeFile(){
         read.close();
-    }
+    }           //closes file
 
     /**
      * This method sets the X value
@@ -50,7 +50,7 @@ public class AxeReadFile {
      */
     public void setX(int X){
         this.X = X;
-    }
+    }           //sets x value
 
     /**
      * This method returns the X value
@@ -58,7 +58,7 @@ public class AxeReadFile {
      */
     public int getX(){
         return X;
-    }
+    }           //returns x value
 
     /**
      * This method sets the Y value
@@ -66,7 +66,7 @@ public class AxeReadFile {
      */
     public void setY(int Y){
         this.Y= Y;
-    }
+    }       //sets y value
 
     /**
      * This method returns the Y value
@@ -74,6 +74,6 @@ public class AxeReadFile {
      */
     public int getY(){
         return Y;
-    }
+    }           //returns y value
 
 }
