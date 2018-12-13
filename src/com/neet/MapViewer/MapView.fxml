@@ -26,14 +26,14 @@
    <right>
       <Pane fx:id="LeftPane" prefHeight="640.0" prefWidth="219.0" style="-fx-background-color: #256381; -fx-border-color: #31BCFC; -fx-border-width: 4;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="SetAxe" layoutX="49.0" layoutY="355.0" mnemonicParsing="false" onAction="#setPosition" prefHeight="52.0" prefWidth="109.0" style="-fx-background-color: #31BCFC;" text="Set Axe" textFill="WHITE">
+            <Button fx:id="SetAxe" layoutX="49.0" layoutY="355.0" mnemonicParsing="false" onAction="#setPosition" prefHeight="52.0" prefWidth="109.0" styleClass="button1" stylesheets="@Style.css" text="Set Axe" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button fx:id="SetBoat" layoutX="49.0" layoutY="490.0" mnemonicParsing="false" onAction="#setPosition" prefHeight="52.0" prefWidth="109.0" style="-fx-background-color: #31BCFC;" text="Set Boat" textFill="WHITE">
+            <Button fx:id="SetBoat" layoutX="49.0" layoutY="490.0" mnemonicParsing="false" onAction="#setPosition" prefHeight="52.0" prefWidth="109.0" styleClass="button1" stylesheets="@Style.css" text="Set Boat" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -88,14 +88,14 @@
                      </input>
                   </SepiaTone>
                </effect></RadioButton>
-            <Button fx:id="ZoomIn" layoutX="15.0" layoutY="131.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="52.0" prefWidth="80.0" style="-fx-background-color: #31BCFC;" text="Zoom-In" textFill="WHITE">
+            <Button fx:id="ZoomIn" layoutX="15.0" layoutY="131.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="52.0" prefWidth="80.0" styleClass="button1" stylesheets="@Style.css" text="Zoom-In" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
                <effect>
                   <DropShadow />
                </effect></Button>
-            <Button id="ZoomOut" fx:id="ZoomOut" layoutX="112.0" layoutY="131.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="52.0" prefWidth="80.0" style="-fx-background-color: #31BCFC;" text="Zoom-Out" textFill="WHITE">
+            <Button id="ZoomOut" fx:id="ZoomOut" layoutX="112.0" layoutY="131.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="52.0" prefWidth="80.0" styleClass="button1" stylesheets="@Style.css" text="Zoom-Out" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -128,7 +128,7 @@
                      </input></SepiaTone>
                </effect>
             </Label>
-            <Button fx:id="PlayGame" layoutX="48.0" layoutY="574.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="52.0" prefWidth="109.0" style="-fx-background-color: #31BCFC;" text="PLAY" textFill="WHITE">
+            <Button fx:id="PlayGame" layoutX="48.0" layoutY="574.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="52.0" prefWidth="109.0" styleClass="button1" stylesheets="@Style.css" text="PLAY" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
