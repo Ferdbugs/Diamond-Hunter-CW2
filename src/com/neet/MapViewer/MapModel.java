@@ -21,6 +21,8 @@ public class MapModel {
     private TileMap tileMap = new TileMap(16);
     private Image AxeImage;
     private Image BoatImage;
+    private Image Diamond;
+    private int[][] diamondloc;
 
     /**
      * Constructor used to initialize some functions and variables.
@@ -29,6 +31,8 @@ public class MapModel {
         loadmaptiles();                                                     //Calls loadmaptiles() to initialize the function, making it ready for use.
         AxeImage = SwingFXUtils.toFXImage(Content.ITEMS[1][1],null);  //Image of the axe is loaded from Content class in Diamond Hunter.
         BoatImage = SwingFXUtils.toFXImage(Content.ITEMS[1][0],null); //Image of the boat is loaded from Content class in Diamond Hunter.
+        Diamond =  SwingFXUtils.toFXImage(Content.DIAMOND[0][0],null);
+        diamondloc = new int[][] {{20,20},{12,36},{28,4},{4, 34},{28, 19},{35, 26},{38,36},{27, 28},{20, 30},{14, 25},{4, 21},{9, 14},{4, 3},{20, 14},{13, 20}};
     }
 
     /**
@@ -47,7 +51,6 @@ public class MapModel {
                 }
 
             }
-
     }
 
     /**
@@ -88,6 +91,19 @@ public class MapModel {
     public Image getBoat(){
         return BoatImage;
     }
+
+    /**
+     * Draw Diamond Function
+     * @param g GraphicsContext Object
+     */
+    public void drawDiamond(GraphicsContext g)
+    {
+        for(int[] diamond : diamondloc){                                      //Cycle through the diamond co-ordinates array.
+                g.drawImage(Diamond,diamond[1]*tilesize,diamond[0]*tilesize);   //Draws diamond images on specific co-ordinates.
+            }
+
+    }
+
 
 
 

@@ -79,6 +79,7 @@ public class MapViewController {
      */
     public void UpdateMap(){
         mapModel.drawmap(Graphics);
+        mapModel.drawDiamond(Graphics);
         drawItem();
         MapImage = MapCanvas.snapshot(new SnapshotParameters(),new WritableImage(640,640));
         Image_ViewMap.setImage(MapImage);
